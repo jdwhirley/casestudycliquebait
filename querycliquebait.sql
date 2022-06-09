@@ -11,7 +11,7 @@ FROM clique_bait.users;
 --How many times was each product viewed?
 SELECT page_id, event_type, COUNT(*)
 FROM clique_bait.events 
-WHERE event_type=1
+WHERE page_id NOT IN ('1', '2', '12') AND event_type='1'
 GROUP BY page_id, events.event_type;
 
 --How many times was each product added to cart?

@@ -5,7 +5,10 @@ FROM clique_bait.users;
 
 --How many cookies does each user have on average?
 
-
+--What is the number of unique visits by all users per month?
+--number of unique visits vv
+SELECT COUNT ( DISTINCT visit_id ) AS "Number of visits" 
+FROM clique_bait.events;
 
 --Product funnel analysis
 --How many times was each product viewed?

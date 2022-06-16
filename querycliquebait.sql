@@ -10,6 +10,12 @@ FROM clique_bait.users;
 SELECT COUNT ( DISTINCT visit_id ) AS "Number of visits" 
 FROM clique_bait.events;
 
+--What is the number of events for each event type?
+SELECT events.event_type, COUNT(*)
+FROM clique_bait.events 
+GROUP BY events.event_type
+ORDER BY events.event_type ASC;
+
 --Product funnel analysis
 --How many times was each product viewed?
 SELECT page_id, event_type, COUNT(*)

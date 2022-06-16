@@ -16,6 +16,37 @@ FROM clique_bait.events
 GROUP BY events.event_type
 ORDER BY events.event_type ASC;
 
+--Percentage of visits with purchase?
+--this is total count of purchases
+SELECT events.event_type, COUNT(*)
+FROM clique_bait.events
+WHERE events.event_type='3'
+GROUP BY events.event_type;
+
+/*
+SELECT events.event_type, COUNT(*)
+FROM clique_bait.events
+WHERE events.event_type='3'
+GROUP BY events.event_type;
+
+SELECT events.event_type, COUNT(*)
+FROM clique_bait.events;
+
+select x.number / y.number 
+from
+(
+ SELECT events.event_type, COUNT(*)
+FROM clique_bait.events;
+) x
+join 
+(
+ SELECT events.event_type, COUNT(*)
+FROM clique_bait.events
+WHERE events.event_type='3'
+GROUP BY events.event_type; 
+) y on 1=1
+*/
+
 --Product funnel analysis
 --How many times was each product viewed?
 SELECT page_id, event_type, COUNT(*)
